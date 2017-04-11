@@ -1,0 +1,3 @@
+/home/pi/ece445/picamdemo/CMakeFiles/edit_cache.dir
+/home/pi/ece445/picamdemo/CMakeFiles/rebuild_cache.dir
+/home/pi/ece445/picamdemo/CMakeFiles/picamdemo.dir
