@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pi/ece445/picamdemo
+CMAKE_SOURCE_DIR = /home/pi/Downloads/picamdemo
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pi/ece445/picamdemo
+CMAKE_BINARY_DIR = /home/pi/Downloads/picamdemo
 
 # Include any dependencies generated for this target.
 include CMakeFiles/picamdemo.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/picamdemo.dir/flags.make
 
 CMakeFiles/picamdemo.dir/picam.cpp.o: CMakeFiles/picamdemo.dir/flags.make
 CMakeFiles/picamdemo.dir/picam.cpp.o: picam.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/ece445/picamdemo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/picamdemo.dir/picam.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/picamdemo.dir/picam.cpp.o -c /home/pi/ece445/picamdemo/picam.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/Downloads/picamdemo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/picamdemo.dir/picam.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/picamdemo.dir/picam.cpp.o -c /home/pi/Downloads/picamdemo/picam.cpp
 
 CMakeFiles/picamdemo.dir/picam.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/picamdemo.dir/picam.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pi/ece445/picamdemo/picam.cpp > CMakeFiles/picamdemo.dir/picam.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pi/Downloads/picamdemo/picam.cpp > CMakeFiles/picamdemo.dir/picam.cpp.i
 
 CMakeFiles/picamdemo.dir/picam.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/picamdemo.dir/picam.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/ece445/picamdemo/picam.cpp -o CMakeFiles/picamdemo.dir/picam.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/Downloads/picamdemo/picam.cpp -o CMakeFiles/picamdemo.dir/picam.cpp.s
 
 CMakeFiles/picamdemo.dir/picam.cpp.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/picamdemo.dir/picam.cpp.o.provides.build: CMakeFiles/picamdemo.dir/pi
 
 CMakeFiles/picamdemo.dir/camera.cpp.o: CMakeFiles/picamdemo.dir/flags.make
 CMakeFiles/picamdemo.dir/camera.cpp.o: camera.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/ece445/picamdemo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/picamdemo.dir/camera.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/picamdemo.dir/camera.cpp.o -c /home/pi/ece445/picamdemo/camera.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/Downloads/picamdemo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/picamdemo.dir/camera.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/picamdemo.dir/camera.cpp.o -c /home/pi/Downloads/picamdemo/camera.cpp
 
 CMakeFiles/picamdemo.dir/camera.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/picamdemo.dir/camera.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pi/ece445/picamdemo/camera.cpp > CMakeFiles/picamdemo.dir/camera.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pi/Downloads/picamdemo/camera.cpp > CMakeFiles/picamdemo.dir/camera.cpp.i
 
 CMakeFiles/picamdemo.dir/camera.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/picamdemo.dir/camera.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/ece445/picamdemo/camera.cpp -o CMakeFiles/picamdemo.dir/camera.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/Downloads/picamdemo/camera.cpp -o CMakeFiles/picamdemo.dir/camera.cpp.s
 
 CMakeFiles/picamdemo.dir/camera.cpp.o.requires:
 
@@ -107,16 +107,16 @@ CMakeFiles/picamdemo.dir/camera.cpp.o.provides.build: CMakeFiles/picamdemo.dir/c
 
 CMakeFiles/picamdemo.dir/cameracontrol.cpp.o: CMakeFiles/picamdemo.dir/flags.make
 CMakeFiles/picamdemo.dir/cameracontrol.cpp.o: cameracontrol.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/ece445/picamdemo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/picamdemo.dir/cameracontrol.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/picamdemo.dir/cameracontrol.cpp.o -c /home/pi/ece445/picamdemo/cameracontrol.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/Downloads/picamdemo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/picamdemo.dir/cameracontrol.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/picamdemo.dir/cameracontrol.cpp.o -c /home/pi/Downloads/picamdemo/cameracontrol.cpp
 
 CMakeFiles/picamdemo.dir/cameracontrol.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/picamdemo.dir/cameracontrol.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pi/ece445/picamdemo/cameracontrol.cpp > CMakeFiles/picamdemo.dir/cameracontrol.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pi/Downloads/picamdemo/cameracontrol.cpp > CMakeFiles/picamdemo.dir/cameracontrol.cpp.i
 
 CMakeFiles/picamdemo.dir/cameracontrol.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/picamdemo.dir/cameracontrol.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/ece445/picamdemo/cameracontrol.cpp -o CMakeFiles/picamdemo.dir/cameracontrol.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/Downloads/picamdemo/cameracontrol.cpp -o CMakeFiles/picamdemo.dir/cameracontrol.cpp.s
 
 CMakeFiles/picamdemo.dir/cameracontrol.cpp.o.requires:
 
@@ -131,16 +131,16 @@ CMakeFiles/picamdemo.dir/cameracontrol.cpp.o.provides.build: CMakeFiles/picamdem
 
 CMakeFiles/picamdemo.dir/graphics.cpp.o: CMakeFiles/picamdemo.dir/flags.make
 CMakeFiles/picamdemo.dir/graphics.cpp.o: graphics.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/ece445/picamdemo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/picamdemo.dir/graphics.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/picamdemo.dir/graphics.cpp.o -c /home/pi/ece445/picamdemo/graphics.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/Downloads/picamdemo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/picamdemo.dir/graphics.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/picamdemo.dir/graphics.cpp.o -c /home/pi/Downloads/picamdemo/graphics.cpp
 
 CMakeFiles/picamdemo.dir/graphics.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/picamdemo.dir/graphics.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pi/ece445/picamdemo/graphics.cpp > CMakeFiles/picamdemo.dir/graphics.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pi/Downloads/picamdemo/graphics.cpp > CMakeFiles/picamdemo.dir/graphics.cpp.i
 
 CMakeFiles/picamdemo.dir/graphics.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/picamdemo.dir/graphics.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/ece445/picamdemo/graphics.cpp -o CMakeFiles/picamdemo.dir/graphics.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/Downloads/picamdemo/graphics.cpp -o CMakeFiles/picamdemo.dir/graphics.cpp.s
 
 CMakeFiles/picamdemo.dir/graphics.cpp.o.requires:
 
@@ -175,6 +175,7 @@ picamdemo: /usr/lib/arm-linux-gnueabihf/libopencv_stitching.so.2.4.9
 picamdemo: /usr/lib/arm-linux-gnueabihf/libopencv_ocl.so.2.4.9
 picamdemo: /usr/lib/arm-linux-gnueabihf/libopencv_gpu.so.2.4.9
 picamdemo: /usr/lib/arm-linux-gnueabihf/libopencv_contrib.so.2.4.9
+picamdemo: /usr/lib/libwiringPi.so
 picamdemo: /usr/lib/arm-linux-gnueabihf/libopencv_photo.so.2.4.9
 picamdemo: /usr/lib/arm-linux-gnueabihf/libopencv_legacy.so.2.4.9
 picamdemo: /usr/lib/arm-linux-gnueabihf/libopencv_video.so.2.4.9
@@ -187,7 +188,7 @@ picamdemo: /usr/lib/arm-linux-gnueabihf/libopencv_imgproc.so.2.4.9
 picamdemo: /usr/lib/arm-linux-gnueabihf/libopencv_flann.so.2.4.9
 picamdemo: /usr/lib/arm-linux-gnueabihf/libopencv_core.so.2.4.9
 picamdemo: CMakeFiles/picamdemo.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pi/ece445/picamdemo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable picamdemo"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pi/Downloads/picamdemo/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable picamdemo"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/picamdemo.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -207,6 +208,6 @@ CMakeFiles/picamdemo.dir/clean:
 .PHONY : CMakeFiles/picamdemo.dir/clean
 
 CMakeFiles/picamdemo.dir/depend:
-	cd /home/pi/ece445/picamdemo && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pi/ece445/picamdemo /home/pi/ece445/picamdemo /home/pi/ece445/picamdemo /home/pi/ece445/picamdemo /home/pi/ece445/picamdemo/CMakeFiles/picamdemo.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/pi/Downloads/picamdemo && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pi/Downloads/picamdemo /home/pi/Downloads/picamdemo /home/pi/Downloads/picamdemo /home/pi/Downloads/picamdemo /home/pi/Downloads/picamdemo/CMakeFiles/picamdemo.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/picamdemo.dir/depend
 

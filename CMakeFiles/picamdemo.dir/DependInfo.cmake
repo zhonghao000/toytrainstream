@@ -4,10 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/pi/ece445/picamdemo/camera.cpp" "/home/pi/ece445/picamdemo/CMakeFiles/picamdemo.dir/camera.cpp.o"
-  "/home/pi/ece445/picamdemo/cameracontrol.cpp" "/home/pi/ece445/picamdemo/CMakeFiles/picamdemo.dir/cameracontrol.cpp.o"
-  "/home/pi/ece445/picamdemo/graphics.cpp" "/home/pi/ece445/picamdemo/CMakeFiles/picamdemo.dir/graphics.cpp.o"
-  "/home/pi/ece445/picamdemo/picam.cpp" "/home/pi/ece445/picamdemo/CMakeFiles/picamdemo.dir/picam.cpp.o"
+  "/home/pi/Downloads/picamdemo/camera.cpp" "/home/pi/Downloads/picamdemo/CMakeFiles/picamdemo.dir/camera.cpp.o"
+  "/home/pi/Downloads/picamdemo/cameracontrol.cpp" "/home/pi/Downloads/picamdemo/CMakeFiles/picamdemo.dir/cameracontrol.cpp.o"
+  "/home/pi/Downloads/picamdemo/graphics.cpp" "/home/pi/Downloads/picamdemo/CMakeFiles/picamdemo.dir/graphics.cpp.o"
+  "/home/pi/Downloads/picamdemo/picam.cpp" "/home/pi/Downloads/picamdemo/CMakeFiles/picamdemo.dir/picam.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

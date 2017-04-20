@@ -2,6 +2,7 @@
 #include <unistd.h>
 #include <time.h>
 #include <jpeglib.h>
+#include <wiringPi.h>
 #include "camera.h"
 #include "graphics.h"
 
@@ -26,7 +27,7 @@ int process(unsigned char* tmpbuff, unsigned char* smoothGray)
   int state = 0;
   //canny(smoothGray);
   
-  clock_t start = clock(), diff;
+  //clock_t start = clock(), diff;
   //loadJpg("bend.jpg");
   //printf("width = %d, height = %d\n", Width, Height);
   
@@ -39,7 +40,7 @@ int process(unsigned char* tmpbuff, unsigned char* smoothGray)
   //writeGrayJpg("step1.jpg", Width, Height, smoothGray);
 
   bendSum = 0;
-  for (j = Height / 5; j < Height / 3 * 2; j++)
+  for (j = Height / 5; j < Height / 2; j++)
   {
     rowBase = (Height - 1 - j) * Width;
     class1Num = 0;
@@ -69,9 +70,9 @@ int process(unsigned char* tmpbuff, unsigned char* smoothGray)
         classNumber[j] += 1;
       }
     }
-    if (j > 5)
+    if (j > 5 + Height / 5)
     {
-      if (classNumber[j] < classNumber[j-6] * 2 / 3)
+      if (classNumber[j] < classNumber[j-6] / 2)
       {
         state = 2;
         break;
@@ -80,18 +81,19 @@ int process(unsigned char* tmpbuff, unsigned char* smoothGray)
     //printf("%d:%d\n", 480-j, classNumber[j]);
     coorMidean[j] = (maximumLimit + minimumLimit)/2;
     //printf("%d ", coorMidean[i]);
-    if (j >= 4)
+    if (j >= 4 + Height / 5)
     {
       for (k = 1; k < 5; k++)
         coorMidean[j] += coorMidean[j - k];
       coorMidean[j] /= 5;
       bendSum += coorMidean[j] - coorMidean[j-4];
-      if (j >= 34)
+      if (j >= 34 + Height / 5)
         bendSum -= coorMidean[j-30] - coorMidean[j-34];
-      if (abs(bendSum) >= 100)
+      if (abs(bendSum) >= 50)
       {
         state = 1;
-        break;
+        if (abs(bendSum) >= 150)
+          break;
       }
       //printf("%d:%d %d\n",480 - j, coorMidean[j] - coorMidean[j-4], bendSum);
     }
@@ -114,6 +116,13 @@ int process(unsigned char* tmpbuff, unsigned char* smoothGray)
 //entry point
 int main(int argc, const char **argv)
 {
+        if (wiringPiSetup () == -1)
+    		return 1 ;
+ 
+ 	pinMode (0, OUTPUT) ;         // aka BCM_GPIO pin 11
+  	pinMode (2, OUTPUT) ; 	// aka BCM_GPIO pin 13
+
+  	
 	//should the camera convert frame data from yuv to argb automatically?
 	bool do_argb_conversion = true;
 
@@ -147,6 +156,19 @@ int main(int argc, const char **argv)
 			state = process(tmpbuff, smoothGray);
 
 			cam->EndReadFrame(texidx);
+		}
+
+		if (state == 0){
+			digitalWrite (0, 1) ;       // normal speed
+    			digitalWrite (2, 1) ;
+		}
+		else if (state == 1){
+			digitalWrite (0, 0) ;       // slow
+    			digitalWrite (2, 1) ;
+		}
+		else {
+			digitalWrite (0, 0) ;       // stop
+    			digitalWrite (2, 0) ;
 		}
 
 		//begin frame, draw the texture then end frame (the bit of maths just fits the image to the screen while maintaining aspect ratio)
