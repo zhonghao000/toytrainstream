@@ -6,8 +6,9 @@
 #include "camera.h"
 #include "graphics.h"
 
-#define MAIN_TEXTURE_WIDTH 640
+#define MAIN_TEXTURE_WIDTH 300
 #define MAIN_TEXTURE_HEIGHT 480
+#define ENDLINE 240
 
 unsigned char tmpbuff[MAIN_TEXTURE_WIDTH*MAIN_TEXTURE_HEIGHT*4];
 const int Width = MAIN_TEXTURE_WIDTH;
@@ -17,12 +18,12 @@ int process(unsigned char* tmpbuff, unsigned char* smoothGray)
 {
   int i, j, k;
   int rowBase;
-  int class1Coordinate[640];
+  int class1Coordinate[300];
   int coorMidean[480];
   int class1Num;
   int maximumLimit, minimumLimit;
   int *class1CoorPtr;
-  int bendSum;
+  int bendSum, midSum;
   int classNumber[480];
   int state = 0;
   //canny(smoothGray);
@@ -34,20 +35,21 @@ int process(unsigned char* tmpbuff, unsigned char* smoothGray)
 
   for (i = 0; i < Width * Height; i ++)
     if ((0.2989 * (float)tmpbuff[i*4] + 0.5870 * (float)tmpbuff[i*4 + 1] + 0.1140 * (float)tmpbuff[i*4 + 2]) < 80)
-      smoothGray[i] = 0;
-    else
       smoothGray[i] = 200;
+    else
+      smoothGray[i] = 0;
   //writeGrayJpg("step1.jpg", Width, Height, smoothGray);
 
   bendSum = 0;
-  for (j = Height / 5; j < Height / 2; j++)
+  midSum = 0;
+  for (j = 0; j < Height - ENDLINE; j++)
   {
     rowBase = (Height - 1 - j) * Width;
     class1Num = 0;
     class1CoorPtr = class1Coordinate;
     for (i = rowBase; i < rowBase + Width; i++) 
     {
-      if (smoothGray[i] == 0)
+      if (smoothGray[i] == 200)
       {
         *(class1CoorPtr++) = i - rowBase;
         class1Num += 1;
@@ -64,13 +66,23 @@ int process(unsigned char* tmpbuff, unsigned char* smoothGray)
     {
       if (i - rowBase < minimumLimit || i - rowBase > maximumLimit)
       {
-        smoothGray[i] = 200;
+        smoothGray[i] = 0;
       }
-      else if (smoothGray[i] == 0){
+      else if (smoothGray[i] == 200){
         classNumber[j] += 1;
       }
     }
-    if (j > 5 + Height / 5)
+
+    if (j > 50 )
+    {
+      if (classNumber[j] < classNumber[j-6] / 2)
+      {
+        state = 2;
+        break;
+      }
+    }
+
+    if (j > 50)
     {
       if (classNumber[j] < classNumber[j-6] / 2)
       {
@@ -81,13 +93,22 @@ int process(unsigned char* tmpbuff, unsigned char* smoothGray)
     //printf("%d:%d\n", 480-j, classNumber[j]);
     coorMidean[j] = (maximumLimit + minimumLimit)/2;
     //printf("%d ", coorMidean[i]);
-    if (j >= 4 + Height / 5)
+    if (j >= 4 )
     {
       for (k = 1; k < 5; k++)
         coorMidean[j] += coorMidean[j - k];
       coorMidean[j] /= 5;
+      midSum += coorMidean[j];
+      if (j == 50)
+      {
+         if (midSum / 47 > Width / 5 * 4 || midSum / 47 < Width / 5)
+         {
+            state = 1;
+            break;
+         }
+      }
       bendSum += coorMidean[j] - coorMidean[j-4];
-      if (j >= 34 + Height / 5)
+      if (j >= 34 )
         bendSum -= coorMidean[j-30] - coorMidean[j-34];
       if (abs(bendSum) >= 50)
       {
@@ -95,6 +116,8 @@ int process(unsigned char* tmpbuff, unsigned char* smoothGray)
         if (abs(bendSum) >= 150)
           break;
       }
+      if (classNumber[j] < 50 && j > 50 && bendSum < 50){
+        state = 2;
       //printf("%d:%d %d\n",480 - j, coorMidean[j] - coorMidean[j-4], bendSum);
     }
     
